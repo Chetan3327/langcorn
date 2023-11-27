@@ -1,6 +1,9 @@
 import uvicorn
 from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
+# from langchain.llms import GooglePalm
+# llm = GooglePalm(google_api_key='', temperature=0.2)
+
 app = FastAPI()
 app.add_middleware(
     CORSMiddleware,
@@ -16,6 +19,7 @@ async def hello():
 
 @app.get("/hello")
 async def index():
+    
     return {'hello': 'world'}
 
 
