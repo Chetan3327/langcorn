@@ -11,8 +11,8 @@ llm = GooglePalm(google_api_key=os.environ['GOOGLE_API_KEY'], temperature=0.2)
 
 
 prompt = PromptTemplate(
-    input_variables=['code'],
-    template="Don't write any markdown like ``` for code. Indent code with you are providing. Complete the following code:\n\n{code}"
+    input_variables=['file_name', 'code'],
+    template="Update the code in the file named {file_name}. Implement or complete the code based on the provided {code}. Do not use any markdown-like code blocks (e.g., ```python) in your response. Provide the entire modified code for the file."
 )
 
 # prompt = PromptTemplate(
@@ -24,6 +24,7 @@ chain = LLMChain(llm=llm, prompt=prompt)
 
 if __name__ == '__main__':
     input_data = {
+        "file_name": "test.py",
         "code": "const factorial = (n) => {    // inplement code for factorial of n }"
     }
 

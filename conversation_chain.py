@@ -22,4 +22,4 @@ memory = ConversationBufferMemory(return_messages=True)
 conversation = ConversationChain(memory=memory, prompt=prompt, llm=llm)
 
 if __name__ == '__main__':
-    print(conversation.run(input=''))
+    print(conversation.run(input='what is 2 + 2 ?'))
