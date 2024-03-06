@@ -8,7 +8,9 @@ app = create_service(
 
 origins = [
     "http://localhost",
+    "http://localhost:*",
     "http://localhost:3000",
+    "http://localhost:5173",
     "https://codeflow-26ut.onrender.com"
 ]
 
