@@ -11,7 +11,7 @@ load_dotenv()
 
 prompt = ChatPromptTemplate.from_messages(
     [
-        SystemMessagePromptTemplate.from_template('The following is a friendly conversation between a human and an AI(name of AI is Luna). AI is good at Coding and provides good solutions to the questions.'),
+        SystemMessagePromptTemplate.from_template('Following is a formal conversation between a human and an AI. AI knows about building the layout of a basic catalogue and the norms it should follow. Chatbot can answer the routes each button might redirect to, example, a scoring catalogue option, option to become a seller, option to buy subscriptions for the site according to the user. The site also offers free two reviews for the catalogue.'),
         MessagesPlaceholder(variable_name='history'),
         HumanMessagePromptTemplate.from_template('{input}')
     ]
